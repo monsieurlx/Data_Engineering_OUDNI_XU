@@ -1,5 +1,7 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+model = SentimentIntensityAnalyzer()
+
 def create_model():
 	return SentimentIntensityAnalyzer()
 

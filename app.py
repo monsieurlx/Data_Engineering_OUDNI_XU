@@ -3,6 +3,9 @@ from redis import Redis, RedisError, StrictRedis
 from flask import request
 from model_s_analysis import check_sentence_sentiment
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import test_app
+
+
 
 app = Flask(__name__)
 
@@ -28,7 +31,7 @@ def sentiment_analyzer_scores(sentence):
 def index():
 	if request.method == 'POST':
 		details = request.form	
-		if details['form_type'] == 'submit_txt':
+		if details['form_type'] == 'submit_sentence':
 			return sentiment_analyzer_scores(details['sentence'])
 	return render_template('index.html')
 
@@ -38,7 +41,9 @@ def add_text():
 	return sentiment_analyzer_scores(text)
 
 if __name__ == '__main__':
+	
 	app.debug = True
 	redis_client = StrictRedis(host='redis', port=5000)
 	app.run(host='0.0.0.0')
+	#exec(open('test_app.py').read())
 	
