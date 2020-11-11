@@ -13,11 +13,11 @@ def sentiment_analyzer_scores(sentence):
 	model = SentimentIntensityAnalyzer()
 	score = model.polarity_scores(sentence)
 	if check_sentence_sentiment(sentence) == 'Pos':
-		print('The sentence is Positive')
+		return 'The sentence is Positive'
 	elif check_sentence_sentiment(sentence) == 'Neg':
-		print('The sentence is Negative')
+		return 'The sentence is negative'
 	else:
-		print('The sentence is Neutral')
+		return 'The sentence is Neutral'
 
 	score = model.polarity_scores(sentence)
 	return "{:-<40} {}".format(sentence,score)
