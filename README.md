@@ -17,8 +17,8 @@ To start the testing :
 
 In order to use docker you need to first build it with :
 
-docker build -t <name> .
+docker build -t name .
   
 And then you can run it by using :
 
-docker run -p 5000:5000 <name>
+docker run -p 5000:5000 name
