@@ -1,5 +1,5 @@
 # Data_Engineering_OUDNI_XU
-
+by Alexandre OUDNI and Léo Xu
 To test it locally you first need to install :
 
 flask,
@@ -22,3 +22,5 @@ docker build -t name .
 And then you can run it by using :
 
 docker run -p 5000:5000 name
+
+TRELLO : https://trello.com/b/5MMpq86x/data-eng-ii-project
