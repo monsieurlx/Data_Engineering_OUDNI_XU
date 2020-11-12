@@ -13,11 +13,11 @@ def sentiment_analyzer_scores(sentence):
 	model = SentimentIntensityAnalyzer()
 	score = model.polarity_scores(sentence)
 	if check_sentence_sentiment(sentence) == 'Pos':
-		print('The sentence is Positive')
+		return 'The sentence is Positive'
 	elif check_sentence_sentiment(sentence) == 'Neg':
-		print('The sentence is Negative')
+		return 'The sentence is negative'
 	else:
-		print('The sentence is Neutral')
+		return 'The sentence is Neutral'
 
 	score = model.polarity_scores(sentence)
 	return "{:-<40} {}".format(sentence,score)
@@ -41,9 +41,8 @@ def add_text():
 	return sentiment_analyzer_scores(text)
 
 if __name__ == '__main__':
-	
+
 	app.debug = True
-	redis_client = StrictRedis(host='redis', port=5000)
+	#redis_client = StrictRedis(host='redis', port=5000)
 	app.run(host='0.0.0.0')
 	#exec(open('test_app.py').read())
-	
