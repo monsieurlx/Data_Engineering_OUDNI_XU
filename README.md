@@ -2,8 +2,8 @@
 
 To test it locally you first need to install :
 
-flask
-nltk
+flask,
+nltk,
 vaderSentiment
 
 To start the application :
